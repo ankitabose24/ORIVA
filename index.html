@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ORIVA — Healthy Everyday Food, Fresh Bowls, Smoothies & Smart Snacks.">
+  <title>ORIVA — Healthy Can Be Tasty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ================= LOADER ================= -->
+  <div class="loader" id="pageLoader">
+    <div class="loader-logo">ORIVA</div>
+    <p>A fresh beginning for a healthier life...</p>
+  </div>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="top-announcement-bar">
+    <span>Free Shipping above Rs. 199</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="nav">
+    <a class="brand" href="#home" aria-label="ORIVA Home">
+      <span class="brand-text">ORIVA</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home" class="active">Home</a>
+      <div class="nav-dropdown">
+        <a href="#categories" class="dropdown-trigger">All Products <span class="nav-arrow">▾</span></a>
+        <div class="dropdown-menu">
+          <a href="#categories" data-filter="fruits">Fresh Fruits</a>
+          <a href="#categories" data-filter="bowls">Legume & Grain Bowls</a>
+          <a href="#categories" data-filter="breakfast">Breakfast</a>
+          <a href="#categories" data-filter="drinks">Healthy Drinks</a>
+          <a href="#categories" data-filter="snacks">Smart Snacks</a>
+        </div>
+      </div>
+      <a href="#about">Our Story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact" id="contactNavBtn">Contact</a>
+      <a href="#track-order">Track Order</a>
+    </nav>
+
+    <div class="header-right-actions">
+      <button class="icon-nav-btn" id="searchButton" aria-label="Search products" title="Search">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+
+      <button class="icon-nav-btn" id="userButton" aria-label="User account" title="Account">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </button>
+
+      <button class="cart-btn" id="cartButton" aria-label="Open cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span id="cartCount">0</span>
+      </button>
+
+      <button class="menu-btn" id="menuButton" aria-label="Open mobile menu">☰</button>
+    </div>
+  </header>
+
+  <!-- CATEGORY CIRCLE ICONS ("Icons like pictures" with older website categories & pictures) -->
+  <section class="category-circles-section" aria-label="Quick Category Selection">
+    <div class="category-circles-scroll">
+      <button class="category-circle-item active" data-category="all">
+        <div class="circle-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=300&q=85" alt="All Menu category">
+        </div>
+        <span class="circle-name">All Items</span>
+      </button>
+
+      <button class="category-circle-item" data-category="fruits">
+        <div class="circle-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=300&q=85" alt="Fresh Fruits category">
+        </div>
+        <span class="circle-name">Fresh Fruits</span>
+      </button>
+
+      <button class="category-circle-item" data-category="bowls">
+        <div class="circle-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=300&q=85" alt="Grain Bowls category">
+        </div>
+        <span class="circle-name">Grain Bowls</span>
+      </button>
+
+      <button class="category-circle-item" data-category="breakfast">
+        <div class="circle-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=300&q=85" alt="Breakfast category">
+        </div>
+        <span class="circle-name">Breakfast</span>
+      </button>
+
+      <button class="category-circle-item" data-category="drinks">
+        <div class="circle-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=300&q=85" alt="Healthy Drinks category">
+        </div>
+        <span class="circle-name">Healthy Drinks</span>
+      </button>
+
+      <button class="category-circle-item" data-category="snacks">
+        <div class="circle-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=300&q=85" alt="Smart Snacks category">
+        </div>
+        <span class="circle-name">Smart Snacks</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- FULL SCREEN HERO SLIDER ("Pictures that slide in full screen" - without text content) -->
+  <section class="fullscreen-slider-container" id="home" aria-label="Hero full-screen slider">
+    <div class="fullscreen-slider-track" id="sliderTrack">
+      <!-- SLIDE 1 -->
+      <div class="fullscreen-slide active" data-index="0">
+        <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1920&q=85" alt="ORIVA — a fresh beginning for a healthier life" class="slide-fullscreen-img">
+        <div class="slide-picture-overlay">
+          <h1 class="slide-oriva-title">ORIVA</h1>
+          <p class="slide-oriva-tagline">a fresh beginning for a healthier life</p>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="fullscreen-slide" data-index="1">
+        <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=1920&q=85" alt="Colourful fresh fruit and breakfast bowl" class="slide-fullscreen-img">
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="fullscreen-slide" data-index="2">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1920&q=85" alt="Healthy vegetable and legume bowl" class="slide-fullscreen-img">
+      </div>
+
+      <!-- SLIDE 4 -->
+      <div class="fullscreen-slide" data-index="3">
+        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1920&q=85" alt="Fresh revitalising drink" class="slide-fullscreen-img">
+      </div>
+    </div>
+
+    <!-- Full Screen Slide Controls -->
+    <button class="slider-arrow-btn prev-arrow" id="sliderPrevBtn" aria-label="Previous slide">
+      ‹
+    </button>
+    <button class="slider-arrow-btn next-arrow" id="sliderNextBtn" aria-label="Next slide">
+      ›
+    </button>
+
+    <!-- Slide Dash Indicators -->
+    <div class="slider-dash-indicators" id="sliderDashIndicators" aria-label="Slide indicators">
+      <button class="slider-dash active" data-index="0" aria-label="Slide 1"></button>
+      <button class="slider-dash" data-index="1" aria-label="Slide 2"></button>
+      <button class="slider-dash" data-index="2" aria-label="Slide 3"></button>
+      <button class="slider-dash" data-index="3" aria-label="Slide 4"></button>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP BUTTON (from Screenshot 1) -->
+  <a href="https://wa.me/" target="_blank" rel="noopener" class="whatsapp-float-btn" aria-label="Chat with us on WhatsApp" title="WhatsApp Support">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.04 20.16C10.56 20.16 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.1 7.62C8.94 7.62 8.68 7.68 8.46 7.92C8.24 8.16 7.62 8.74 7.62 9.93C7.62 11.12 8.49 12.26 8.61 12.42C8.73 12.58 10.3 15.01 12.76 16.07C14.81 16.95 15.22 16.78 15.68 16.74C16.14 16.7 17.16 16.13 17.37 15.54C17.58 14.95 17.58 14.44 17.52 14.34C17.46 14.24 17.3 14.18 17.06 14.06C16.82 13.94 15.64 13.36 15.42 13.28C15.2 13.2 15.04 13.16 14.88 13.4C14.72 13.64 14.26 14.18 14.12 14.34C13.98 14.5 13.84 14.52 13.6 14.4C13.36 14.28 12.59 14.03 11.67 13.21C10.95 12.57 10.46 11.78 10.32 11.54C10.18 11.3 10.3 11.17 10.42 11.05C10.53 10.94 10.67 10.76 10.79 10.62C10.91 10.48 10.95 10.38 11.03 10.22C11.11 10.06 11.07 9.92 11.01 9.8C10.95 9.68 10.49 8.56 10.3 8.1C10.12 7.65 9.93 7.71 9.78 7.71C9.64 7.7 9.48 7.62 9.1 7.62Z"/>
+    </svg>
+  </a>
+
+  <main>
+
+    <section class="why section" id="why-us">
+      <div class="section-intro">
+        <p class="eyebrow">WHY ORIVA?</p>
+        <h2>Why choose us<br><em>over regular snacks?</em></h2>
+        <p>Market snacks often hide palm oil, excessive sodium, and empty calories. We simply give you wholesome everyday alternatives where you see exactly what you eat.</p>
+      </div>
+
+      <div class="compare-card">
+        <div class="compare-head">
+          <span>REGULAR SNACKS</span>
+          <span>ORIVA</span>
+        </div>
+        <div class="compare-row">
+          <span>Ingredient information</span>
+          <b>Sometimes unclear</b>
+          <strong>Clearly listed</strong>
+        </div>
+        <div class="compare-row">
+          <span>Nutrition information</span>
+          <b>Usually unavailable</b>
+          <strong>Protein + fibre shown</strong>
+        </div>
+        <div class="compare-row">
+          <span>Portion & variety</span>
+          <b>Depends on the vendor</b>
+          <strong>Consistent choices</strong>
+        </div>
+        <div class="compare-row">
+          <span>Everyday affordability</span>
+          <b>Varies</b>
+          <strong>Budget-friendly options</strong>
+        </div>
+      </div>
+
+      <div class="benefit-strip">
+        <div><span>01</span><strong>Know your food</strong><p>Simple ingredient lists.</p></div>
+        <div><span>02</span><strong>Know your nutrition</strong><p>Protein and fibre at a glance.</p></div>
+        <div><span>03</span><strong>Enjoy your choice</strong><p>Healthy does not mean boring.</p></div>
+      </div>
+    </section>
+
+    <section class="menu section" id="categories">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR MENU</p>
+          <h2>Pick your kind<br>of <em>good.</em></h2>
+        </div>
+        <p>Browse by category, then tap any dish for its full nutrition and benefits.</p>
+      </div>
+
+      <div class="category-tabs" id="categoryTabs">
+        <button class="category-tab active" data-category="all">All</button>
+        <button class="category-tab" data-category="fruits">Fresh Fruits</button>
+        <button class="category-tab" data-category="bowls">Legume & Grain Bowls</button>
+        <button class="category-tab" data-category="breakfast">Breakfast</button>
+        <button class="category-tab" data-category="drinks">Healthy Drinks</button>
+        <button class="category-tab" data-category="snacks">Smart Snacks</button>
+      </div>
+
+      <div class="food-grid" id="foodGrid"></div>
+    </section>
+
+    <section class="story section" id="about">
+      <div class="story-image">
+        <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1200&q=85" alt="ORIVA — a fresh beginning for a healthier life">
+        <div class="story-picture-overlay">
+          <strong class="story-oriva-badge">ORIVA</strong>
+          <span class="story-oriva-sub">a fresh beginning for a healthier life</span>
+        </div>
+        <div class="image-note">GOOD FOOD · FAIR PRICE</div>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow">THE ORIVA PROMISE</p>
+        <h2>Food that fits<br>real <em>life.</em></h2>
+        <p>We believe choosing something nourishing should not mean choosing something complicated, expensive or tasteless.</p>
+        <p>ORIVA brings together fresh wholesome ingredients, practical portions and clear nutrition so you can make a better everyday choice without feeling restricted.</p>
+        <div class="story-stats">
+          <div><strong>20+</strong><span>food choices</span></div>
+          <div><strong>₹49+</strong><span>everyday options</span></div>
+          <div><strong>2</strong><span>key nutrition markers</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews section" id="reviews" aria-label="Customer Reviews">
+      <div class="reviews-header">
+        <div>
+          <span class="eyebrow">CUSTOMER STORIES</span>
+          <h2>Loved by 10,000+<br><em>healthy eaters.</em></h2>
+        </div>
+        <div class="reviews-header-right">
+          <div class="rating-overview">
+            <div class="stars-gold">★★★★★</div>
+            <strong>4.9 / 5</strong>
+            <span>Based on 1,420+ reviews</span>
+          </div>
+          <button type="button" class="primary-btn write-review-trigger-btn" id="openReviewModalBtn">
+            Write a Review <span>✍️</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="reviews-grid" id="reviewsGrid">
+        <!-- Review 1 -->
+        <article class="review-card">
+          <div class="review-top">
+            <div class="review-stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Buyer</span>
+          </div>
+          <h3 class="review-title">"The freshest morning bowl ever"</h3>
+          <p class="review-body">I order the Rainbow Fruit Cup and Chickpea Power Bowl every alternate day. Crisp, completely fresh, and not heavy on the stomach at all. Total game changer!</p>
+          <div class="review-author">
+            <div class="author-avatar">R</div>
+            <div>
+              <strong>Roshni Sen</strong>
+              <small>Ordered Rainbow Fruit Bowl · Kolkata</small>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="review-card">
+          <div class="review-top">
+            <div class="review-stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Buyer</span>
+          </div>
+          <h3 class="review-title">"Guilt-free snacking that actually tastes great"</h3>
+          <p class="review-body">Finally an honest brand where nutrition info isn't hidden. The Crunchy Seed Bars and Roasted Chana have become my daily office desk fuel.</p>
+          <div class="review-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <strong>Aditya Verma</strong>
+              <small>Ordered Smart Snacks · Bengaluru</small>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="review-card">
+          <div class="review-top">
+            <div class="review-stars">★★★★★</div>
+            <span class="verified-badge">✓ Verified Buyer</span>
+          </div>
+          <h3 class="review-title">"Cooling and clean ingredients"</h3>
+          <p class="review-body">The Mango Yogurt Cooler is divine — no artificial sweetness, just authentic creamy yogurt and fresh mango. Kids love it, and I feel good serving it.</p>
+          <div class="review-author">
+            <div class="author-avatar">P</div>
+            <div>
+              <strong>Pooja Mukherjee</strong>
+              <small>Ordered Mango Cooler · Mumbai</small>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta section">
+      <div>
+        <p class="eyebrow">READY TO EAT BETTER?</p>
+        <h2>Choose something<br><em>good today.</em></h2>
+      </div>
+      <a class="primary-btn" href="#categories">Browse food <span>→</span></a>
+    </section>
+  </main>
+
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">YOUR CART</p>
+        <h2>Your good choices.</h2>
+      </div>
+      <button class="close-btn" id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-congrats">
+      <span>✦</span>
+      <div>
+        <strong>Congratulations!</strong>
+        <p>You chose your health.<br>You chose us.</p>
+      </div>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="total-line"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+      <button class="primary-btn checkout-btn" id="checkoutButton">Continue to order <span>→</span></button>
+      <small>Good food today. A better choice for tomorrow.</small>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="dish-modal" id="dishModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close-btn modal-close" id="closeModal" aria-label="Close dish details">×</button>
+      <div class="modal-image">
+        <img id="modalImage" src="" alt="">
+        <span id="modalCategory"></span>
+      </div>
+      <div class="modal-content">
+        <p class="eyebrow" id="modalTime"></p>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <div class="nutrition-grid">
+          <div><strong id="modalProtein"></strong><span>Protein</span></div>
+          <div><strong id="modalFibre"></strong><span>Fibre</span></div>
+          <div><strong id="modalCalories"></strong><span>Calories</span></div>
+        </div>
+        <h3>Why you'll like it</h3>
+        <ul id="modalBenefits"></ul>
+        <div class="modal-buy">
+          <strong id="modalPrice"></strong>
+          <button class="primary-btn" id="modalAdd">Add to cart <span>+</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP CONTACT MODAL -->
+  <div class="contact-modal" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+    <div class="contact-modal-card">
+      <button class="close-btn contact-modal-close" id="closeContactModal" aria-label="Close contact form">×</button>
+      
+      <div id="contactFormContainer">
+        <div class="contact-modal-header">
+          <span class="eyebrow">GET IN TOUCH</span>
+          <h2 id="contactModalTitle">We'd love to<br><em>hear from you.</em></h2>
+          <p>Have questions about ORIVA, healthy meal plans, or your order? Send us a message and our nutrition team will get back to you promptly.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Full Name <span>*</span></label>
+            <input type="text" id="contactName" name="name" placeholder="e.g. Priyanshu Sharma" required>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="contactEmail">Email Address <span>*</span></label>
+              <input type="email" id="contactEmail" name="email" placeholder="name@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactPhone">Phone Number</label>
+              <input type="tel" id="contactPhone" name="phone" placeholder="+91 98765 43210">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactSubject">Topic / Inquiry</label>
+            <select id="contactSubject" name="subject">
+              <option value="general">General Inquiry</option>
+              <option value="order">Order & Delivery</option>
+              <option value="nutrition">Diet & Nutrition Question</option>
+              <option value="corporate">Corporate / Bulk Catering</option>
+              <option value="feedback">Feedback & Suggestions</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">Your Message <span>*</span></label>
+            <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us how we can help you..." required></textarea>
+          </div>
+
+          <div class="contact-form-actions">
+            <button type="submit" class="primary-btn contact-submit-btn">
+              Send Message <span>→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact-success-state" id="contactSuccessState" style="display: none;">
+        <div class="success-icon-badge">✓</div>
+        <span class="eyebrow">MESSAGE RECEIVED</span>
+        <h3>Thank you!</h3>
+        <p>Your message has been sent to the <strong>ORIVA</strong> team. We will review your inquiry and get back to you shortly.</p>
+        <button type="button" class="primary-btn" id="closeContactSuccessBtn">Back to ORIVA <span>→</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP REVIEW MODAL -->
+  <div class="review-modal" id="reviewModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="reviewModalTitle">
+    <div class="review-modal-card">
+      <button class="close-btn review-modal-close" id="closeReviewModal" aria-label="Close review form">×</button>
+      
+      <div id="reviewFormContainer">
+        <div class="review-modal-header">
+          <span class="eyebrow">SHARE YOUR THOUGHTS</span>
+          <h2 id="reviewModalTitle">Write a<br><em>Customer Review.</em></h2>
+          <p>Your honest review helps fellow healthy food lovers and helps us keep perfecting ORIVA recipes.</p>
+        </div>
+
+        <form class="review-form" id="reviewForm">
+          <div class="form-group">
+            <label>Rating <span>*</span></label>
+            <div class="star-rating-selector" id="starRatingSelector">
+              <button type="button" class="star-btn active" data-rating="1" aria-label="1 star">★</button>
+              <button type="button" class="star-btn active" data-rating="2" aria-label="2 stars">★</button>
+              <button type="button" class="star-btn active" data-rating="3" aria-label="3 stars">★</button>
+              <button type="button" class="star-btn active" data-rating="4" aria-label="4 stars">★</button>
+              <button type="button" class="star-btn active" data-rating="5" aria-label="5 stars">★</button>
+              <span class="rating-label" id="ratingTextLabel">5.0 / 5 (Excellent)</span>
+            </div>
+            <input type="hidden" id="selectedRatingInput" name="rating" value="5">
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="reviewAuthorName">Your Name <span>*</span></label>
+              <input type="text" id="reviewAuthorName" name="author" placeholder="e.g. Rahul Mehta" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reviewAuthorLocation">City / Location</label>
+              <input type="text" id="reviewAuthorLocation" name="location" placeholder="e.g. Mumbai">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="reviewProductSelect">Item / Dish Reviewed</label>
+            <select id="reviewProductSelect" name="product">
+              <option value="Rainbow Fruit Cups & Bowls">Rainbow Fruit Cups & Bowls</option>
+              <option value="Chickpea Power Bowl">Chickpea Power Bowl</option>
+              <option value="Warm Spiced Oatmeal">Warm Spiced Oatmeal</option>
+              <option value="Green Glow Smoothie">Green Glow Smoothie</option>
+              <option value="Mango Yogurt Cooler">Mango Yogurt Cooler</option>
+              <option value="Crunchy Seed Bars">Crunchy Seed Bars</option>
+              <option value="Peanut Energy Bites">Peanut Energy Bites</option>
+              <option value="Overall ORIVA Experience">Overall ORIVA Experience</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="reviewTitleInput">Review Headline <span>*</span></label>
+            <input type="text" id="reviewTitleInput" name="title" placeholder="e.g. Absolutely delicious & super fresh!" required>
+          </div>
+
+          <div class="form-group">
+            <label for="reviewContentInput">Your Review <span>*</span></label>
+            <textarea id="reviewContentInput" name="content" rows="4" placeholder="What did you love most about this dish, the portion, or taste?" required></textarea>
+          </div>
+
+          <div class="review-form-actions">
+            <button type="submit" class="primary-btn review-submit-btn">
+              Submit Review <span>★</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="review-success-state" id="reviewSuccessState" style="display: none;">
+        <div class="success-icon-badge">★</div>
+        <span class="eyebrow">REVIEW PUBLISHED</span>
+        <h3>Thank you!</h3>
+        <p>Your review has been successfully added to <strong>ORIVA</strong> customer stories. Thank you for supporting healthier food choices!</p>
+        <button type="button" class="primary-btn" id="closeReviewSuccessBtn">See All Reviews <span>→</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Added to your cart ✓</div>
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <h2>ORIVA</h2>
+        <p>A fresh beginning for a healthier life.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="#home">Home</a>
+        <a href="#about">Our Story</a>
+        <a href="#categories">Menu & Products</a>
+        <a href="#reviews">Customer Reviews</a>
+        <a href="#track-order">Track Order</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+        <p><a href="mailto:hello@orivafoods.in">hello@orivafoods.in</a></p>
+        <p>Bengaluru</p>
+        <button type="button" class="footer-inquiry-btn" id="footerContactBtn">
+          Send an Inquiry →
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 ORIVA. A fresh beginning for a healthier life.</p>
+      <p>Crafted by ANKITA BOSE [SuuSri]</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
